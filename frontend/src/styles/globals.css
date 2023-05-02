@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#cae4e7] font-mono;
+}
+
+.input {
+  @apply w-full border-2 rounded-md bg-inputNormal border-inputNormal focus:border-[#8ac6bb] 
+    outline-none px-2 h-10 text-lg transition-all caret-buttonNormal text-buttonNormal font-extrabold;
+}
+
+.btn-primary {
+  @apply rounded-lg text-lg py-2 px-8 transition-all active:scale-95 bg-buttonNormal text-white select-none cursor-pointer
+    disabled:opacity-50;
+}
+
+.btn-outline {
+  @apply rounded-lg text-lg py-2 px-8 transition-all active:scale-95 bg-transparent text-black border-2 border-buttonNormal select-none cursor-pointer
+    disabled:opacity-50;
+}
+
+h1 {
+  @apply text-3xl text-center;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+.loader-input {
+  border: 2px solid #cccccc;
+  border-top: 2px solid #1b464b;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+.loader-button {
+  border: 2px solid #ffffffa0;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.balance-sheet-header {
+  @apply text-base px-4 py-1 bg-slate-200 text-center rounded-md;
+}
