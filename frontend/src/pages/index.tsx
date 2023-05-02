@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useCallback, useState } from "react";
 
 export default function Home() {
@@ -7,21 +8,15 @@ export default function Home() {
     setInitializing(true);
 
     try {
-      const response = await fetch(process.env.API_HOST + "loan/init");
+      const {data} = await axios.get(process.env.API_HOST + "loan/init");
 
-      if (!response.ok) {
-        throw "Invalid response!";
-      }
-
-      const initResult = await response.json();
-
-      if (initResult.error) {
-        throw initResult.msg;
+      if (data.error) {
+        throw data.msg;
       }
 
       window.location.href = "input-business-detail";
     } catch (error) {
-      alert("error");
+      alert(error);
     }
 
     setInitializing(false);
